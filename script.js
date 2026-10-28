@@ -1,72 +1,28 @@
-const books = [
-  {
-    rank: 1, title: 'The Lord of the Rings', author: 'J.R.R. Tolkien', authorImage: 'https://covers.openlibrary.org/a/olid/OL23919A-M.jpg',
-    year: 1954, category: 'Fantasia épica', isbn: '9780618640157',
-    synopsis: 'Quando um anel de poder cai nas mãos do hobbit Frodo, ele precisa deixar o Condado e atravessar uma Terra-média ameaçada por Sauron. Com a ajuda de uma companhia improvável, sua jornada se torna a última esperança de povos inteiros.'
-  },
-  {
-    rank: 2, title: 'The Name of the Wind', author: 'Patrick Rothfuss', authorImage: 'https://covers.openlibrary.org/a/olid/OL1394384A-M.jpg',
-    year: 2007, category: 'Fantasia épica', isbn: '9780756404741',
-    synopsis: 'Em uma hospedaria afastada, o lendário Kvothe decide contar a própria história. Da infância entre artistas itinerantes aos anos de estudo em uma universidade singular, ele revela como se transformou em mito — e o que a lenda deixou de fora.'
-  },
-  {
-    rank: 3, title: 'The Way of Kings', author: 'Brandon Sanderson', authorImage: 'https://covers.openlibrary.org/a/olid/OL1394352A-M.jpg',
-    year: 2010, category: 'Fantasia épica', isbn: '9780765326355',
-    synopsis: 'Em Roshar, tempestades devastadoras moldam a vida e a guerra. Um soldado escravizado, um estudioso em busca de respostas e um líder assombrado por visões seguem caminhos distintos que começam a convergir diante de uma ameaça antiga.'
-  },
-  {
-    rank: 4, title: "Assassin's Apprentice", author: 'Robin Hobb', authorImage: 'https://covers.openlibrary.org/a/olid/OL267252A-M.jpg',
-    year: 1995, category: 'Fantasia épica', isbn: '9780553573398',
-    synopsis: 'Fitz, filho ilegítimo de um príncipe, cresce à margem da corte e aprende a sobreviver entre intrigas. Treinado em segredo para servir à família real, ele precisa escolher entre a lealdade ao reino e o próprio destino.'
-  },
-  {
-    rank: 5, title: 'The Fifth Season', author: 'N.K. Jemisin', authorImage: 'https://covers.openlibrary.org/a/olid/OL6945184A-M.jpg',
-    year: 2015, category: 'Fantasia épica', isbn: '9780316229296',
-    synopsis: 'Em um continente assolado por catástrofes cíclicas, pessoas capazes de controlar a terra são temidas e subjugadas. Quando o mundo se parte e uma mãe perde tudo, três vidas separadas revelam uma história sobre poder, sobrevivência e transformação.'
-  },
-  {
-    rank: 6, title: 'Mistborn: The Final Empire', author: 'Brandon Sanderson', authorImage: 'https://covers.openlibrary.org/a/olid/OL1394352A-M.jpg',
-    year: 2006, category: 'Fantasia épica', isbn: '9780765350381',
-    synopsis: 'Por mil anos, um soberano imortal governa um império coberto de cinzas. Uma jovem ladra descobre que possui habilidades raras e se junta a um grupo de rebeldes que pretende derrubar o regime usando magia, astúcia e uma dose improvável de esperança.'
-  },
-  {
-    rank: 7, title: 'The Lies of Locke Lamora', author: 'Scott Lynch', authorImage: 'https://covers.openlibrary.org/a/olid/OL2739558A-M.jpg',
-    year: 2006, category: 'Fantasia urbana', isbn: '9780553588941',
-    synopsis: 'Na cidade de Camorr, Locke Lamora e seus companheiros fazem fortuna enganando os ricos com golpes elaborados. Mas uma disputa entre forças criminosas ameaça desmontar o plano mais perigoso da equipe e cobrar um preço pessoal.'
-  },
-  {
-    rank: 8, title: 'Jade City', author: 'Fonda Lee', authorImage: 'https://covers.openlibrary.org/a/olid/OL7298028A-M.jpg',
-    year: 2017, category: 'Fantasia urbana', isbn: '9780316440865',
-    synopsis: 'Em uma ilha onde o jade concede habilidades extraordinárias, dois clãs disputam influência e sobrevivência. Quando velhas regras deixam de proteger a cidade, uma família precisa enfrentar mudanças políticas, ambição e lealdades divididas.'
-  },
-  {
-    rank: 9, title: 'The Goblin Emperor', author: 'Katherine Addison', authorImage: 'https://covers.openlibrary.org/a/olid/OL7072400A-M.jpg',
-    year: 2014, category: 'Fantasia urbana', isbn: '9780765365682',
-    synopsis: 'Afastado da corte desde a infância, Maia nunca esperou herdar o trono. De repente imperador, ele encontra um palácio cheio de conspirações e convenções desconhecidas, e tenta governar com compaixão sem perder de vista os perigos ao redor.'
-  },
-  {
-    rank: 10, title: 'Piranesi', author: 'Susanna Clarke', authorImage: 'https://covers.openlibrary.org/a/olid/OL1397926A-M.jpg',
-    year: 2020, category: 'Fantasia urbana', isbn: '9781635575637',
-    synopsis: 'Piranesi vive em uma casa infinita de salões, estátuas e marés, onde registra cada detalhe do mundo que conhece. A chegada de pistas inesperadas sobre outra pessoa desperta perguntas sobre sua memória, sua casa e a verdade de sua existência.'
-  },
-  {
-    rank: 11, title: 'A Memory Called Empire', author: 'Arkady Martine', authorImage: 'https://covers.openlibrary.org/a/olid/OL7478038A-M.jpg',
-    year: 2019, category: 'Ficção científica', isbn: '9781250186430',
-    synopsis: 'Enviada à capital de um império interestelar, a diplomata Mahit Dzmare precisa investigar a morte de seu antecessor enquanto protege sua pequena estação. Política, identidade e tecnologia se entrelaçam em uma missão na qual qualquer palavra pode mudar o futuro.'
-  },
-  {
-    rank: 12, title: 'The Hobbit', author: 'J.R.R. Tolkien', authorImage: 'https://covers.openlibrary.org/a/olid/OL23919A-M.jpg',
-    year: 1937, category: 'Fantasia épica', isbn: '9780345339683',
-    synopsis: 'Bilbo Bolseiro prefere a tranquilidade de sua toca, até que um mago e treze anões o convidam para recuperar um tesouro guardado por um dragão. A viagem inesperada transforma o hobbit e o leva a descobrir uma coragem que não sabia possuir.'
-  }
-];
-
 const catalog = document.querySelector('#book-catalog');
 const filters = document.querySelector('#category-filters');
 const searchInput = document.querySelector('#book-search');
 const resultsCount = document.querySelector('#results-count');
 const emptyState = document.querySelector('#empty-state');
-let selectedCategory = 'Todas';
+const hud = document.querySelector('#book-hud');
+const hudClose = document.querySelector('#hud-close');
+const authorImage = document.querySelector('#hud-author-image');
+const authorInitials = document.querySelector('#hud-author-initials');
+let books = [];
+let selectedCategory = 'Todos';
+let hideTimer;
+let activeCard;
+let activeBook;
+const coverCache = new Map();
+const portraitCache = new Map();
+const coverObserver = 'IntersectionObserver' in window
+  ? new IntersectionObserver((entries, observer) => {
+    entries.forEach((entry) => {
+      if (!entry.isIntersecting) return;
+      observer.unobserve(entry.target);
+      loadBookCover(entry.target, books[Number(entry.target.dataset.bookIndex)]);
+    });
+  }, { rootMargin: '180px' })
+  : null;
 
 function escapeHTML(value) {
   return String(value).replace(/[&<>"']/g, (character) => ({
@@ -74,8 +30,32 @@ function escapeHTML(value) {
   })[character]);
 }
 
+function hashString(value) {
+  return [...value].reduce((hash, character) => ((hash * 31) + character.charCodeAt(0)) >>> 0, 7);
+}
+
+function coverColors(category, title) {
+  const palettes = {
+    'Fantasia': ['#37685e', '#6651a0'],
+    'Ficção científica': ['#17658a', '#353273'],
+    'Distopia': ['#8b4e43', '#392b4a'],
+    'Grimdark': ['#8a493e', '#262835'],
+    'Mistério e suspense': ['#9a7046', '#29394a'],
+    'Terror': ['#773c55', '#202434'],
+    'Ficção histórica': ['#8a6849', '#45534b'],
+    'Ficção literária': ['#5b688c', '#554665'],
+    'Realismo mágico': ['#4e7a70', '#854c76'],
+    'Aventura e YA': ['#447a9a', '#8e674e']
+  };
+  const palette = palettes[category] || ['#416578', '#57508a'];
+  return palette.map((base, index) => {
+    const hue = (hashString(title) + index * 29) % 17;
+    return `color-mix(in srgb, ${base} ${89 + hue}%, #172033)`;
+  });
+}
+
 function renderFilters() {
-  const categories = ['Todas', ...new Set(books.map((book) => book.category))];
+  const categories = ['Todos', ...new Set(books.map((book) => book.category))];
   filters.innerHTML = categories.map((category) => `
     <button class="filter-button" type="button" data-category="${escapeHTML(category)}"
       aria-pressed="${category === selectedCategory}">${escapeHTML(category)}</button>
@@ -85,9 +65,9 @@ function renderFilters() {
 function renderBooks() {
   const query = searchInput.value.trim().toLocaleLowerCase('pt-BR');
   const visibleBooks = books.filter((book) => {
-    const matchesCategory = selectedCategory === 'Todas' || book.category === selectedCategory;
-    const matchesQuery = `${book.title} ${book.author}`.toLocaleLowerCase('pt-BR').includes(query);
-    return matchesCategory && matchesQuery;
+    const matchesCategory = selectedCategory === 'Todos' || book.category === selectedCategory;
+    const searchable = `${book.title} ${book.author} ${book.category}`.toLocaleLowerCase('pt-BR');
+    return matchesCategory && searchable.includes(query);
   });
   const categories = [...new Set(visibleBooks.map((book) => book.category))];
 
@@ -96,39 +76,156 @@ function renderBooks() {
     return `
       <section class="category-section" aria-label="${escapeHTML(category)}">
         <div class="category-heading">
-          <h3>${escapeHTML(category)}</h3><span>${categoryBooks.length} ${categoryBooks.length === 1 ? 'livro' : 'livros'}</span>
+          <h3>${escapeHTML(category)}</h3><span class="category-count">${String(categoryBooks.length).padStart(2, '0')} OBRAS</span>
           <span class="category-rule" aria-hidden="true"></span>
         </div>
         <div class="book-grid">
-          ${categoryBooks.map((book) => `
-            <article class="book-card" tabindex="0" aria-label="${escapeHTML(book.title)}, de ${escapeHTML(book.author)}, ranking ${book.rank}">
-              <div class="book-cover-wrap">
-                <span class="book-rank">#${book.rank} · r/FANTASY</span>
-                <img class="book-cover" src="https://covers.openlibrary.org/b/isbn/${escapeHTML(book.isbn)}-L.jpg"
-                  alt="Capa de ${escapeHTML(book.title)}" loading="lazy">
-                <div class="book-overlay">
-                  <span class="overlay-year">${book.year}</span>
-                  <div class="overlay-author">
-                    <img class="author-photo" src="${escapeHTML(book.authorImage)}" alt="" loading="lazy">
-                    <span class="author-label"><small>Escrito por</small><strong>${escapeHTML(book.author)}</strong></span>
+          ${categoryBooks.map((book) => {
+            const [coverA, coverB] = coverColors(book.category, book.title);
+            const index = books.indexOf(book) + 1;
+            return `
+              <article class="book-card" tabindex="0" data-book-index="${index - 1}"
+                aria-label="${escapeHTML(book.title)}, de ${escapeHTML(book.author)}, ${escapeHTML(book.category)}">
+                <div class="book-cover-wrap">
+                  <span class="book-rank">S / ${String(index).padStart(3, '0')}</span>
+                  <img class="real-cover" alt="" aria-hidden="true">
+                  <div class="cover-art" style="--cover-a:${coverA};--cover-b:${coverB}" role="img" aria-label="Capa ilustrativa de ${escapeHTML(book.title)}">
+                    <span class="cover-top">SHELFSPHERE · ${escapeHTML(book.category.toUpperCase())}</span>
+                    <span class="cover-emblem" aria-hidden="true">${escapeHTML(book.title.trim().charAt(0).toUpperCase())}</span>
+                    <span><span class="cover-title">${escapeHTML(book.title)}</span><span class="cover-author">${escapeHTML(book.author)}</span></span>
                   </div>
-                  <p class="overlay-synopsis">${escapeHTML(book.synopsis)}</p>
                 </div>
-              </div>
-              <div class="book-meta">
-                <span class="book-title" title="${escapeHTML(book.title)}">${escapeHTML(book.title)}</span>
-                <p class="book-author">${escapeHTML(book.author)}</p>
-              </div>
-            </article>
-          `).join('')}
+                <div class="book-meta">
+                  <p class="book-author">${escapeHTML(book.author)}</p>
+                  <span class="book-title" title="${escapeHTML(book.title)}">${escapeHTML(book.title)}</span>
+                </div>
+              </article>
+            `;
+          }).join('')}
         </div>
       </section>
     `;
   }).join('');
 
-  resultsCount.textContent = `${visibleBooks.length} ${visibleBooks.length === 1 ? 'livro encontrado' : 'livros encontrados'}`;
+  resultsCount.textContent = `${String(visibleBooks.length).padStart(3, '0')} ${visibleBooks.length === 1 ? 'OBRA ENCONTRADA' : 'OBRAS ENCONTRADAS'}`;
   emptyState.hidden = visibleBooks.length > 0;
   catalog.hidden = visibleBooks.length === 0;
+  catalog.querySelectorAll('.book-card').forEach((card) => {
+    if (coverObserver) coverObserver.observe(card);
+    else loadBookCover(card, books[Number(card.dataset.bookIndex)]);
+  });
+  loadVisibleCovers();
+}
+
+function loadVisibleCovers() {
+  catalog.querySelectorAll('.book-card:not([data-cover-requested])').forEach((card) => {
+    const bounds = card.getBoundingClientRect();
+    if (bounds.top <= window.innerHeight + 180 && bounds.bottom >= -180) {
+      loadBookCover(card, books[Number(card.dataset.bookIndex)]);
+      coverObserver?.unobserve(card);
+    }
+  });
+}
+
+async function findCover(book) {
+  if (coverCache.has(book.title)) return coverCache.get(book.title);
+  const query = new URLSearchParams({ title: book.title, author: book.author, limit: '1', fields: 'cover_i' });
+  const lookup = fetch(`https://openlibrary.org/search.json?${query}`)
+    .then((response) => {
+      if (!response.ok) throw new Error(`Open Library respondeu ${response.status}`);
+      return response.json();
+    })
+    .then((data) => data.docs?.[0]?.cover_i
+      ? `https://covers.openlibrary.org/b/id/${data.docs[0].cover_i}-M.jpg`
+      : null);
+  coverCache.set(book.title, lookup);
+  return lookup;
+}
+
+function loadBookCover(card, book) {
+  if (!book || card.dataset.coverRequested) return;
+  card.dataset.coverRequested = 'true';
+  findCover(book).then((cover) => {
+    if (!cover) return;
+    const image = card.querySelector('.real-cover');
+    image.onload = () => card.querySelector('.book-cover-wrap').classList.add('has-real-cover');
+    image.onerror = () => console.warn(`A capa de "${book.title}" não pôde ser exibida.`);
+    image.src = cover;
+  }).catch((error) => console.warn(`Não foi possível carregar a capa de "${book.title}".`, error));
+}
+
+async function findPortrait(author) {
+  if (portraitCache.has(author)) return portraitCache.get(author);
+  const lookup = fetch(`https://en.wikipedia.org/api/rest_v1/page/summary/${encodeURIComponent(author.replaceAll(' ', '_'))}`)
+    .then((response) => {
+      if (!response.ok) throw new Error(`Wikipedia respondeu ${response.status}`);
+      return response.json();
+    })
+    .then((data) => data.thumbnail?.source || null);
+  portraitCache.set(author, lookup);
+  return lookup;
+}
+
+function positionHud(card) {
+  const bounds = card.getBoundingClientRect();
+  const hudBounds = hud.getBoundingClientRect();
+  const margin = 14;
+  let left = bounds.right + margin;
+  if (left + hudBounds.width > window.innerWidth - margin) {
+    left = bounds.left - hudBounds.width - margin;
+  }
+  if (left < margin) left = Math.max(margin, window.innerWidth - hudBounds.width - margin);
+  const top = Math.min(
+    Math.max(margin, bounds.top + (bounds.height - hudBounds.height) / 2),
+    window.innerHeight - hudBounds.height - margin
+  );
+  hud.style.left = `${left}px`;
+  hud.style.top = `${top}px`;
+}
+
+async function showHud(card) {
+  clearTimeout(hideTimer);
+  const book = books[Number(card.dataset.bookIndex)];
+  if (!book) return;
+  activeCard = card;
+  activeBook = book;
+  const index = books.indexOf(book) + 1;
+  hud.dataset.bookIndex = String(index - 1);
+  document.querySelector('#hud-category').textContent = book.category.toLocaleUpperCase('pt-BR');
+  document.querySelector('#hud-author-name').textContent = book.author;
+  document.querySelector('#hud-year').textContent = book.year;
+  document.querySelector('#hud-title').textContent = book.title;
+  document.querySelector('#hud-synopsis').textContent = book.synopsis;
+  document.querySelector('#hud-rank').textContent = `S / ${String(index).padStart(3, '0')}`;
+  authorInitials.textContent = book.author.split(/\s+/).slice(0, 2).map((part) => part[0]).join('').toUpperCase();
+  authorImage.hidden = true;
+  authorImage.removeAttribute('src');
+  hud.setAttribute('aria-hidden', 'false');
+  hud.classList.add('is-visible');
+  positionHud(card);
+
+  const requestedBook = book;
+  loadBookCover(card, book);
+  const imagePromises = [
+    findPortrait(book.author).then((portrait) => {
+      if (activeBook !== requestedBook || !portrait) return;
+      authorImage.onload = () => { authorImage.hidden = false; };
+      authorImage.onerror = () => { authorImage.hidden = true; };
+      authorImage.src = portrait;
+    }).catch((error) => console.warn(`Não foi possível carregar o retrato de ${book.author}.`, error))
+  ];
+  await Promise.all(imagePromises);
+}
+
+function scheduleHudHide() {
+  clearTimeout(hideTimer);
+  hideTimer = setTimeout(() => {
+    if (hud.matches(':hover') || activeCard?.matches(':hover, :focus')) return;
+    hud.classList.remove('is-visible');
+    hud.setAttribute('aria-hidden', 'true');
+    activeCard = null;
+    activeBook = null;
+  }, 140);
 }
 
 filters.addEventListener('click', (event) => {
@@ -140,12 +237,61 @@ filters.addEventListener('click', (event) => {
 });
 
 searchInput.addEventListener('input', renderBooks);
+catalog.addEventListener('pointerover', (event) => {
+  const card = event.target.closest('.book-card');
+  if (card && card !== activeCard) showHud(card);
+});
+catalog.addEventListener('pointerout', (event) => {
+  if (event.target.closest('.book-card') && !event.relatedTarget?.closest('.book-card')) scheduleHudHide();
+});
+catalog.addEventListener('focusin', (event) => {
+  const card = event.target.closest('.book-card');
+  if (card) showHud(card);
+});
+catalog.addEventListener('focusout', (event) => {
+  if (event.target.closest('.book-card') && !event.relatedTarget?.closest('.book-card')) scheduleHudHide();
+});
+hud.addEventListener('pointerenter', () => clearTimeout(hideTimer));
+hud.addEventListener('pointerleave', scheduleHudHide);
+hudClose.addEventListener('click', () => {
+  hud.classList.remove('is-visible');
+  hud.setAttribute('aria-hidden', 'true');
+  activeCard = null;
+  activeBook = null;
+});
 document.addEventListener('keydown', (event) => {
   if (event.key === '/' && !['INPUT', 'TEXTAREA'].includes(document.activeElement.tagName)) {
     event.preventDefault();
     searchInput.focus();
   }
+  if (event.key === 'Escape') {
+    hud.classList.remove('is-visible');
+    hud.setAttribute('aria-hidden', 'true');
+    activeCard = null;
+    activeBook = null;
+    searchInput.blur();
+  }
 });
+window.addEventListener('resize', () => { if (activeCard) positionHud(activeCard); });
+window.addEventListener('scroll', () => {
+  if (activeCard) positionHud(activeCard);
+  requestAnimationFrame(loadVisibleCovers);
+}, { passive: true });
 
-renderFilters();
-renderBooks();
+fetch('books.json')
+  .then((response) => {
+    if (!response.ok) throw new Error(`Não foi possível carregar books.json (${response.status}).`);
+    return response.json();
+  })
+  .then((data) => {
+    if (!Array.isArray(data) || data.length !== 100) throw new Error('O acervo precisa conter exatamente 100 obras.');
+    books = data;
+    renderFilters();
+    renderBooks();
+  })
+  .catch((error) => {
+    resultsCount.textContent = 'ERRO AO CARREGAR O ACERVO';
+    emptyState.hidden = false;
+    emptyState.textContent = 'Não foi possível abrir books.json. Inicie o servidor local conforme as instruções do README.';
+    console.error(error);
+  });
