@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#f6f3ed">
+    <meta name="description" content="Explore uma seleção de fantasia e ficção científica: encontre livros, autores e novas sagas para ler.">
+    <title>Entrelinhas — catálogo de fantasia</title>
+    <link rel="preconnect" href="https://covers.openlibrary.org">
+    <link rel="preconnect" href="https://images.unsplash.com">
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+  </head>
+  <body>
+    <header class="site-header">
+      <a class="brand" href="#" aria-label="Entrelinhas, início">
+        <span class="brand-mark" aria-hidden="true">e.</span>
+        <span>entrelinhas</span>
+      </a>
+      <a class="header-link" href="#catalogo">Explorar catálogo <span aria-hidden="true">↗</span></a>
+    </header>
+
+    <main>
+      <section class="hero" aria-labelledby="page-title">
+        <div class="hero-copy">
+          <p class="eyebrow"><span class="eyebrow-line"></span> UM UNIVERSO EM CADA PÁGINA</p>
+          <h1 id="page-title">Encontre sua<br><span>próxima aventura.</span></h1>
+          <p class="hero-description">Uma seleção de histórias extraordinárias de fantasia e ficção científica, escolhidas por leitores apaixonados.</p>
+          <a class="hero-cta" href="#catalogo">Descobrir livros <span aria-hidden="true">↓</span></a>
+        </div>
+        <div class="hero-art" aria-hidden="true">
+          <div class="orbit orbit-one"></div>
+          <div class="orbit orbit-two"></div>
+          <span class="spark spark-one">✳</span>
+          <span class="spark spark-two">✦</span>
+          <span class="hero-book book-back"></span>
+          <span class="hero-book book-front"></span>
+          <span class="hero-art-label">HISTÓRIAS<br>QUE FICAM</span>
+        </div>
+        <div class="hero-footnote"><span>01</span> FANTASIA &amp; FICÇÃO CIENTÍFICA</div>
+      </section>
+
+      <section class="catalog-section" id="catalogo" aria-labelledby="catalog-title">
+        <div class="catalog-heading">
+          <div>
+            <p class="eyebrow"><span class="eyebrow-line"></span> A ESTANTE</p>
+            <h2 id="catalog-title">Histórias para <em>se perder.</em></h2>
+          </div>
+          <p class="catalog-intro">Passe o cursor ou foque um livro para conhecer a história por trás da capa.</p>
+        </div>
+
+        <div class="catalog-tools">
+          <label class="search-box">
+            <span class="search-icon" aria-hidden="true">⌕</span>
+            <span class="visually-hidden">Buscar por título ou autor</span>
+            <input id="book-search" type="search" placeholder="Buscar livro ou autor..." autocomplete="off">
+            <kbd>/</kbd>
+          </label>
+          <div class="filter-list" id="category-filters" aria-label="Filtrar por categoria"></div>
+        </div>
+
+        <p class="results-count" id="results-count" aria-live="polite"></p>
+        <div id="book-catalog" class="book-catalog"></div>
+        <p id="empty-state" class="empty-state" hidden>Nenhum livro encontrado. Experimente outra busca.</p>
+      </section>
+
+      <section class="quote-band" aria-label="Sobre o catálogo">
+        <span class="quote-mark" aria-hidden="true">“</span>
+        <p>Há mundos inteiros esperando<br>do outro lado da página.</p>
+        <span class="quote-credit">SUA PRÓXIMA LEITURA COMEÇA AQUI</span>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <a class="brand footer-brand" href="#"><span class="brand-mark" aria-hidden="true">e.</span><span>entrelinhas</span></a>
+      <p>Uma estante para leitores curiosos.</p>
+      <a href="https://www.reddit.com/r/Fantasy/" target="_blank" rel="noreferrer">Inspirado pela comunidade r/Fantasy <span aria-hidden="true">↗</span></a>
+    </footer>
+  </body>
+</html>
